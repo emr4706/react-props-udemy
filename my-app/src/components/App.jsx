@@ -1,15 +1,15 @@
 import React from "react";
-import Card from './Card';
-import contacts from '../contacts';
-
+import Card from "./Card";
+import contacts from "../contacts";
+console.log(contacts);
 
 function App() {
   // console.log(contacts);
-  
+
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
-      <Card
+      {/* <Card
       name={contacts[0].name}
       img={contacts[0].imgURL}
       tel={contacts[0].phone}
@@ -26,8 +26,16 @@ function App() {
       img={contacts[2].imgURL}
       tel={contacts[2].phone}
       email={contacts[2].email}
-       />
-
+       /> */}
+      {contacts.map((contact, index) => (
+        <Card
+          key={index}
+          name={contact.name}
+          img={contact.imgURL}
+          tel={contact.phone}
+          email={contact.email}
+        />
+      ))}
     </div>
   );
 }
